@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dagger_Playground</string>
+    <string name="welcome">Hello!  You are in production.</string>
+
+    <string name="city">Waltham,MA</string>
+    <string name="label_get_weather">Get Weather</string>
+    <string name="label_temperature">Temperature:</string>
+</resources>

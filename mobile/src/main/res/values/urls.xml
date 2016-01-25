@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weather_service_url">http://api.openweathermap.org/data/2.5/</string>
+    <string name="api_key">4675230cbee55cc2074e105c9fd3e979</string>
+</resources>

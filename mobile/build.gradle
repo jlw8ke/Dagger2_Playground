@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion project.ext.androidCompileSdkVersion
+    buildToolsVersion project.ext.androidBuildToolsVersion
+
+    defaultConfig {
+        applicationId project.ext.androidApplicationId
+        minSdkVersion project.ext.androidMinSdkVersion
+        targetSdkVersion project.ext.androidTargetSdkVersion
+        versionCode project.ext.androidVersionCode
+        versionName project.ext.androidVersionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+retrolambda {
+    jvmArgs '-noverify'
+}
+
+
+
+dependencies {
+    compile project.commonDependencies.androidSupportv7
+    compile project.commonDependencies.androidSupportv7_CardView
+    compile project.commonDependencies.androidSupportDesign
+
+    compile project.commonDependencies.butterKnife
+    compile project.commonDependencies.otto
+    compile project.commonDependencies.retrofit
+    compile project.commonDependencies.retrofitGsonConverter
+    compile project.commonDependencies.timber
+    compile project.commonDependencies.gson
+    compile 'com.squareup.okhttp:okhttp:2.6.0'
+    compile 'com.squareup.okhttp:logging-interceptor:2.6.0'
+    compile (project.commonDependencies.jscience) {
+        exclude group: 'org.javolution', module: 'javolution'
+    }
+
+    compile project.commonDependencies.dagger
+    provided project.commonDependencies.javaAnnotations
+    apt project.commonDependencies.daggerCompiler
+
+    // ================== TESTING LIBRARIES ======================
+    testCompile project.testDependencies.junit
+    testCompile project.testDependencies.hamcrest
+    testCompile project.testDependencies.mockito
+    testCompile project.testDependencies.truth
+    testCompile project.testDependencies.robolectric
+
+}

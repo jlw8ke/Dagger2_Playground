@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Hello!  You are in debug.</string>
+
+    <string name="city">Gainesville,FL</string>
+</resources>
